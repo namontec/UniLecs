@@ -1,21 +1,28 @@
 //Task 1. Все ли символы в строке встречаются один раз
-// UNFINISHED
 
 #include <iostream>
+#include <string>
+#include <map>
 
 using namespace std;
 
-class OneMethod {
-public:
-    void sayHi() {
-        cout << "Hi!" << endl;
+bool checkRepeat(const string& s)
+{
+    map<char, bool> m;
+    for (int i = 0; i < s.length(); i++)
+    {
+        cout << s[i];
+        if ( !m[s[i]] ) m[s[i]] = true;
+        else return true;
     }
+    return false;
 };
 
 
 int main()
 {
-    OneMethod test;
-    test.sayHi();
-    cout << "finish" << endl;
+    cout << checkRepeat("abcdefgsdsd") << endl;
+    cout << checkRepeat("abccdefg") << endl;
+    cout << checkRepeat("aabcdefg") << endl;
+    cout << checkRepeat("abcdefg") << endl;
 }
