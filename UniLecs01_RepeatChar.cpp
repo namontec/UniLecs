@@ -13,9 +13,9 @@ bool checkRepeat(const string& s)
     {
         cout << s[i];
         if ( !m[s[i]] ) m[s[i]] = true;
-        else return true;
+        else return false;
     }
-    return false;
+    return true;
 };
 
 
